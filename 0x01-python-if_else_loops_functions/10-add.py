@@ -5,8 +5,4 @@
 # @x: number one
 # @y: nmber two
 def add(x, y):
-    return x + y
-
-
-print(add(100, -2))
-
+    return x + y`
