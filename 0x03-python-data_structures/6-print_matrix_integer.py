@@ -3,13 +3,5 @@
 
 # print a matrix
 def print_matrix_integer(matrix=[[]]):
-    if matrix:
-        for matrice in matrix:
-            if type(matrice) == type([]):
-                for vec in matrice:
-                    print("{:d}".format(vec), end=" ")
-                print("")
-            else:
-                print("{:d}".format(matrice), end="")
-        print("")
-
+    for matrice in matrix:
+        print(" ".join("{:d}".format(item) for item in matrice))
