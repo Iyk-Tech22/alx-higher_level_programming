@@ -3,6 +3,10 @@
 
 # print a matrix
 def print_matrix_integer(matrix=[[]]):
-    [print("{:d}".format(m), end="") for mat in matrix for m in mat]
+    if matrix:
+        for matrice in matrix:
+            for vec in matrice:
+                print("{:d}".format(vec), end=" ")
+            print("")
 
 
