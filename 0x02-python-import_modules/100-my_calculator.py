@@ -1,35 +1,20 @@
 #!/usr/bin/python3
+import calculator_1 as calc
+import sys
 
-
-# Basic calcaculator with arithmetic operations
+# Basic Arithmethics
 if __name__ == "__main__":
-    import sys
-    import calculator_1
-    args = sys.argv[1:]
     filename = sys.argv[0]
-    if len(args) == 3:
-        if args[1] == "*":
-            oprand1 = int(args[0])
-            oprand2 = int(args[2])
-            calc = calculator_1.mul(oprand1, oprand2)
-            print("{:d} * {:d} = {:d}".format(oprand1, oprand2, calc))
-        elif args[1] == "/":
-            oprand1 = int(args[0])
-            oprand2 = int(args[2])
-            calc = calculator_1.div(oprand1, oprand2)
-            print("{:d} / {:d} = {:d}".format(oprand1, oprand2, calc))
-        elif args[1] == "+":
-            oprand1 = int(args[0])
-            oprand2 = int(args[2])
-            calc = calculator_1.add(oprand1, oprand2)
-            print("{:d} + {:d} = {:d}".format(oprand1, oprand2, calc))
-        elif args[1] == "-":
-            oprand1 = int(args[0])
-            oprand2 = int(args[2])
-            calc = calculator_1.sub(oprand1, oprand2, calc)
-        else:
-            print("Unknown operator. Available operators: +, -, * and /")
-            exit(1)
-    else:
-        print("Usage: {:s} <a> <operator> <b>".format(filename))
+    args = sys.argv[1:]
+    if len(args) != 3:
+        print("Usage: {:s} <a> <operator> <b> ".format(filename))
         exit(1)
+    if args[1] not in "*/+-":
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
+    a = int(args[0])
+    b = int(args[2])
+    func = (calc.mul, calc.div, calc.add, calc.sub)
+    for opt, func in zip("*/+-", func):
+        if opt == args[1]:
+            print("{:d} {:s} {:d} = {:d}".format(a, opt, b, func(a, b)))
