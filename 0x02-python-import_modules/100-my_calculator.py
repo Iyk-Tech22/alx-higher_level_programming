@@ -7,7 +7,6 @@ import sys
 if __name__ == "__main__":
     args = sys.argv[1:]
     filename = sys.argv[0]
-    args = sys.argv[1:]
     if len(args) != 3:
         print("Usage: {:s} <a> <operator> <b> ".format(filename))
         exit(1)
