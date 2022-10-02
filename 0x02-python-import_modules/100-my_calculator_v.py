@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-
+import sys
+import calculator_1
 
 # Basic calcaculator with arithmetic operations
 if __name__ == "__main__":
-    import sys
-    import calculator_1
     args = sys.argv[1:]
     filename = sys.argv[0]
     if len(args) == 3:
