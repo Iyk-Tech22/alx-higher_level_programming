@@ -2,8 +2,10 @@
 import calculator_1 as calc
 import sys
 
+
 # Basic Arithmethics
 if __name__ == "__main__":
+    args = sys.argv[1:]
     filename = sys.argv[0]
     args = sys.argv[1:]
     if len(args) != 3:
