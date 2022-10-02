@@ -2,20 +2,19 @@
 import calculator_1 as calc
 import sys
 
-
-# Basic Arithmethics
-if __name__ == "__main__":
-    args = sys.argv[1:]
-    filename = sys.argv[0]
+if __name__ == '__main__':
+    args = sys.argv
+    args.pop(0)
     if len(args) != 3:
-        print("Usage: {:s} <a> <operator> <b> ".format(filename))
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    if args[1] not in "*/+-":
+    if args[1] not in '+-*/':
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     a = int(args[0])
     b = int(args[2])
-    func = (calc.mul, calc.div, calc.add, calc.sub)
-    for opt, func in zip("*/+-", func):
-        if opt == args[1]:
-            print("{:d} {:s} {:d} = {:d}".format(a, opt, b, func(a, b)))
+    funcs = (calc.add, calc.sub, calc.mul, calc.div)
+    for op, func in zip('+-*/', funcs):
+        if op == args[1]:
+            print("{:d} {:s} {:d} = {:d}".format(a, op, b, func(a, b)))
+            break
