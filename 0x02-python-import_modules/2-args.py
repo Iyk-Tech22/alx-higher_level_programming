@@ -8,14 +8,7 @@ if __name__ == "__main__":
         text += "s."
     elif argc == 1:
         text += ":"
-    args = " "
-    if len(sys.argv) == 1:
-        print("{:d} arguments.".format(0))
-    elif len(sys.argv) == 2:
-        args = sys.argv[1]
-        print("{:d} argument:".format(1))
-        print("{:d}: {:s}".format(1, args))
-    else:
+    elif argc >= 2:
         text += "s:"
     print(text)
     for i, arg in enumerate(args):
