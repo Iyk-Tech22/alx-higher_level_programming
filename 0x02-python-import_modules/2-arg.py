@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if argc == 0:
         text += "s."
     elif argc == 1:
-        text += "s:"
+        text += ":"
     args = " "
     if len(sys.argv) == 1:
         print("{:d} arguments.".format(0))
