@@ -12,4 +12,4 @@ if __name__ == "__main__":
         text += "s:"
     print(text)
     for i, arg in enumerate(args):
-        print("{:d}: {:s}".format(i, arg))
+        print("{:d}: {:s}".format(i+1, arg))
