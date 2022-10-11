@@ -1,0 +1,2 @@
+TRY AND EXCEPTION
+#pythoniscool
