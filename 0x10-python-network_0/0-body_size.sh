@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/env bash
 # Gets byte size of an http request
 curl -s "$1" | wc -c
