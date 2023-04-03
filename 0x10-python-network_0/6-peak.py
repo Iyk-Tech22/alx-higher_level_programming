@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-"""Finds a peak in a list of unsorted integers"""
+""" Find a peak in a list of unsorted integers """
 
+def peak_finder(int_list):
+    """Find a peak in list of integers"""
 
-def find_peak(list_of_integers):
-    """Finds a peak in list_of_integers"""
-
-    if list_of_integers is None or list_of_integers == []:
+    if int_list == None or into_list == []:
         return None
-    lo = 0
-    hi = len(list_of_integers)
-    mid = ((hi - lo) // 2) + lo
-    mid = int(mid)
-    if hi == 1:
-        return list_of_integers[0]
-    if hi == 2:
-        return max(list_of_integers)
-    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-        return list_of_integers[mid]
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
-        return find_peak(list_of_integers[mid:])
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
+    lower = 0
+    high = len(int_list)
+    middle = ((high - lower // 2) + lower
+    middle = int(middle)
+    if high == 1:
+        return int_list[0]
+    if high == 2:
+        return max(int_list)
+    if int_list[middle] >= int_list[middle - 1] and\
+            int_list[middle] >= int_list[middle + 1]:
+        return int_list[middle]
+    if middle > 0 and int_list[middle] < int_list[middle + 1]:
+        return peak_finder(int_list[middle:])
+    if middle > 0 and int_list[middle] < int_list[middle - 1]:
+        return peak_finder(int_list[:middle])
