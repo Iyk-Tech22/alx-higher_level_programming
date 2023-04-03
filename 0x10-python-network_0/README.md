@@ -1,6 +1,6 @@
 ```diff
 - All Tasks
-- Author: Mahadi Abuhuraira
+- Author: Iyk Faiz
 ```
 ## Description
 This projects gets us familiar with the basic information about
